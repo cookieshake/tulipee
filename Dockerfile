@@ -8,7 +8,7 @@ WORKDIR /app
 # Install uv (fast Python package manager) and ca-certs
 RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
-    && curl -LsSf https://astral.sh/uv/install.sh | sh -s -- -y
+    && curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Copy dependency manifests first for better layer caching
 COPY pyproject.toml uv.lock ./
