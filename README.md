@@ -6,14 +6,13 @@ Quick start
 - Configure `.env` (see below), then run: `uv run python -m tulipee`
 
 Container
-- Build locally: `docker build -t cookieshake/tulipee:dev .`
-- Run: `docker run --rm -e ZULIP_URL=... -e API_KEY=... -e EMAIL=... -e YOUTRACK_URL=... -e YOUTRACK_TOKEN=... -e OPENAI_API_KEY=... cookieshake/tulipee:dev`
+- Build locally: `docker build -t ghcr.io/<owner>/tulipee:dev .`
+- Run: `docker run --rm -e ZULIP_URL=... -e API_KEY=... -e EMAIL=... -e YOUTRACK_URL=... -e YOUTRACK_TOKEN=... -e OPENAI_API_KEY=... ghcr.io/<owner>/tulipee:dev`
 
 CI/CD
-- GitHub Actions workflow builds and pushes `cookieshake/tulipee` on pushes to `main` and tags `v*`.
-- Configure repo secrets:
-  - `DOCKERHUB_USERNAME`
-  - `DOCKERHUB_TOKEN` (Docker Hub access token)
+- GitHub Actions workflow builds and pushes `ghcr.io/<owner>/tulipee` on pushes to `main` and tags `v*`.
+- No extra secrets needed; uses `GITHUB_TOKEN` with `packages: write`.
+- To pull without auth, set the GHCR package visibility to public in repo Packages settings.
 
 Configuration (.env)
 - `ZULIP_URL` — Zulip server base URL
