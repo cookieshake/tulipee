@@ -1,5 +1,5 @@
 from tulipee.router import route, Context
-from .utils import send_stream_reply
+from tulipee.utils.zulip import send_stream_reply
 
 
 @route(stream="general", topic="general chat")
@@ -8,4 +8,3 @@ async def general_chat(ctx: Context) -> None:
     if not content:
         return
     await send_stream_reply(ctx, content)
-

@@ -1,0 +1,11 @@
+.git
+.venv
+.flox
+__pycache__
+*.pyc
+*.pyo
+.python-version
+.env
+dist/
+build/
+*.egg-info/
